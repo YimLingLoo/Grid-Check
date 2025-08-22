@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+    content="width=device-width,initial-scale">
+    <title>CSS Responsive Grid Demo</title>
+    <link rel="stylesheet" href="responsive-grid.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1">
+            <h1>Front End Web Development</h1>
+        </div>
+        <div class="item2">
+            <ul>
+                <li>Introduction</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+        <div class="item3">
+            <h3>About Front End Web Development</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero autem asperiores amet consectetur praesentium earum recusandae hic? Placeat quisquam, enim quidem excepturi, quae velit, voluptatum sed aliquam veritatis consequatur quam.</p>
+            <p>Accusantium, ullam sequi maiores natus quasi harum. Consectetur eveniet itaque asperiores neque nisi laboriosam molestiae aspernatur vero nobis pariatur sequi aut laborum rem incidunt, est, quaerat ducimus! Id, eum at.</p>
+            <p>Accusamus quasi minus neque nisi dolore, perferendis repellat facilis voluptatem unde dignissimos reprehenderit non nam animi enim pariatur placeat adipisci! Aliquam, molestias. Ullam maxime commodi ab nobis, cupiditate fugiat ut!</p>
+            <p>Dolorem ullam magnam ut ipsum odio dignissimos saepe porro rerum corporis odit pariatur, commodi deserunt tenetur, aliquid deleniti tempore debitis quas amet doloribus ducimus fuga, animi totam minus. Obcaecati, reiciendis!</p>
+        </div>
+        <div class="item4">
+            
+            <h3>Change the placement of red square</h3>
+            <canvas id="myCanvas" width="150" height="100" style="border:1px solid black;">
+            </canvas>
+            <input type="number" name="xcoord" id="xcoord" placeholder="x-coordinate"/>
+            <input type="number" name="ycoord" id="ycoord" placeholder="y-coordinate"/>
+            <button id="getValueButton">Change Square Location</button>
+            <!--
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+            </ul>
+            -->
+        </div>
+        <div class="item5">
+            <p>Resize the browser window to see content change</p>
+        </div>
+    </div>
+    <script>
+        const getButton = document.getElementById('getValueButton');
+        getButton.addEventListener('click', getInputData);
+
+        function getInputData() {
+            const xCoord = document.getElementById('xcoord');
+            const xValue = xCoord.value;
+            const yCoord = document.getElementById('ycoord');
+            const yValue = yCoord.value;
+            const outputParagraph = document.getElementById('output');
+
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(xValue, yValue, 10, 10);
+        }
+
+    </script>
+</body>
+</html>
